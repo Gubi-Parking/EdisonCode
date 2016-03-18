@@ -5,7 +5,7 @@ import pyupm_i2clcd as lcd
 import thread
 
 def update(threadName,firebase,count):
-  firebase.patch('/ITESM/ZoneA', {'Busy':count})
+  firebase.patch('/ITESM/ZoneB', {'Busy':count})
 
 def writeScreen(mylcd,total,count):
 
@@ -34,8 +34,8 @@ def screenColor(mylcd,total,count):
 #define the firebase database from which the program will be working
 firebase = firebase.FirebaseApplication('https://gubi.firebaseio.com', None)
 #count is equals to the property in the database "lugares"
-count=firebase.get('/ITESM/ZoneA/Busy', None)
-total=firebase.get('/ITESM/ZoneA/Total', None)
+count=firebase.get('/ITESM/ZoneB/Busy', None)
+total=firebase.get('/ITESM/ZoneB/Total', None)
 #define the buttons connected to the intel edison
 button1 = grove.GroveButton(4)
 button2 = grove.GroveButton(3)
